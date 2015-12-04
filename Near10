@@ -1,0 +1,35 @@
+/*[6] Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie. 
+ * Note that Math.abs(n) returns the absolute value of a number. 
+close10(8, 13) → 8
+close10(13, 8) → 8
+close10(13, 7) → 0
+*/
+
+public class Near10 {
+
+	public static void main(String[] args) {
+		
+		int a = Integer.parseInt(args[0]);
+		int b = Integer.parseInt(args[1]);
+		
+		int result = close10(a,b);
+		System.out.println("Result for close10("+a+","+b+") -> "+result);
+	}
+
+	private static int close10(int a, int b) {
+		int result = 0;
+		
+		int x = Math.abs(10-a);
+		int y = Math.abs(10-b);
+		
+		if(x>y)
+			result = b;
+		else if(y>x)
+			result = a;
+		else if(x==y)
+			result = 0;
+		
+		return result;
+	}
+
+}
