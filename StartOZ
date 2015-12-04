@@ -1,0 +1,36 @@
+/*[3] Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz". 
+
+startOz("ozymandias") → "oz"
+startOz("bzoo") → "z"
+startOz("oxx") → "o"*/
+
+
+public class StartOZ {
+
+
+	public static void main(String[] arg) {
+
+		String str = startOZ(arg[0]);
+		System.out.println("Result for startOZ("+arg[0]+") -> "+str);
+		
+	}
+
+	
+	private static String startOZ(String s){
+		
+		String result = new String();
+		
+		if(String.valueOf(s.charAt(0)).equalsIgnoreCase("o"))
+		{
+			result = String.valueOf(s.charAt(0));
+		} 
+		
+		if(String.valueOf(s.charAt(1)).equalsIgnoreCase("z")) {
+			result = result.concat(String.valueOf(s.charAt(1)));
+		}
+		
+	
+		return result;
+	}
+
+}
