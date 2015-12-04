@@ -1,0 +1,40 @@
+/*[5] Given a non-empty string and an int n, return a new string where the char at index n has been removed. The value of n will be a valid index of a char in the original string 
+ (i.e. n will be in the range 0..str.length()-1 inclusive). 
+
+missingChar("kitten", 1) → "ktten"
+missingChar("kitten", 0) → "itten"
+missingChar("kitten", 4) → "kittn"
+*/
+
+public class MissingChar {
+	
+	public static void main(String arg[]){
+		
+		String str = missingChar(arg[0],Integer.parseInt(arg[1]));
+		System.out.println("Result for missingChar("+arg[0]+","+arg[1] +") -> "+str);
+		
+	}
+
+	
+	private static String missingChar(String s, int index){
+		
+		String result = new String();
+		int x = 0;
+		if(!(index >= 0 && index < s.length())){
+			System.out.println("Value of N should be between 0 and"+ (s.length()-1));
+		
+		} else {
+			while (x < s.length()){
+
+				if(x==index){ x++;/*skip the character*/}
+				else{
+					char c = s.charAt(x);
+					result = result.concat(String.valueOf(c));
+					x++;
+				}
+			}
+		}	
+		
+		return result;
+	}
+}
