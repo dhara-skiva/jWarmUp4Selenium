@@ -1,0 +1,49 @@
+/*[1] Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string. 
+ So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more. 
+
+everyNth("Miracle", 2) → "Mrce"
+everyNth("abcdefg", 2) → "aceg"
+everyNth("abcdefg", 3) → "adg"*/
+
+
+public class TestString {
+
+	public static void main(String arg[]){
+		
+		EveryNthString e1 = new EveryNthString();
+		String str = e1.everyNth(arg[0],Integer.parseInt(arg[1]));
+		
+		System.out.println("Result for everyNth("+arg[0]+","+arg[1] +") ->"+str);
+	}
+	
+}
+
+
+class EveryNthString{
+
+	public String everyNth(String s, int index) {
+		
+		String result = new String();
+		int x = 0;
+		if(index == 0){
+			System.out.println("Value of N should be 1 or more !");
+		
+		} else {
+		
+			while (x < s.length()){
+			
+				char c = s.charAt(x);
+				result = result.concat(String.valueOf(c));
+				x = x+index;
+			}
+			//System.out.println("STRING : "+result);
+
+		}
+		
+		return result;
+	}
+	
+	
+	
+	
+}
